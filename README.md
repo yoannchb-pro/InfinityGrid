@@ -2,6 +2,8 @@
 Create an infinity grid in html wich can display random elements
 ## See 3 example
 https://yoannchb-pro.github.io/InfinityGrid/.
+## Basic image
+<img src='./img/basic.png' alt='Basic image'/>
 ## How to use ?
 ```js
 const simple = new Grid({
@@ -18,7 +20,7 @@ const simple = new Grid({
 });
 ```
 ## Example
-```
+```js
 const createElement = async () => {
   let r = Math.round(Math.random()*255));
   let g = Math.round(Math.random()*255));
