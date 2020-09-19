@@ -3,7 +3,7 @@ Create an infinity grid in html wich can display random elements
 ## See 3 example
 https://yoannchb-pro.github.io/InfinityGrid/.
 ## Basic image
-<img src='./img/basic.png' alt='Basic image'/>
+<img src='./img/basic.png' alt='Basic image'></img>
 ## How to use ?
 ```js
 const simple = new Grid({
