@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinity Grid présentation</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <header>
+        <h1>&#127756; InfinityGrid.js</h1>
+        <a id="download" class="download" href="./lib/infinityGrid.js" download="infinityGrid.js">Script</a>
+    </header>
+    <main>
+        <h2>Basic infinity grid</h2>
+        <section id="simple"></section>
+        <h2>Animate infinity grid without mouse controler</h2>
+        <section id="animate_without_mouse"></section>
+        <h2>Animate infinity grid with mouse controler</h2>
+        <section id="animate_with_mouse"></section>
+    </main>
+</body>
+<script src="./lib/infinityGrid.js"></script>
+<script>
+    (async () => {
+        console.log('[INFO]     Connexion...');
+        const url = await fetch('https://s3-us-west-2.amazonaws.com/s.cdpn.io/204379/gallery.json');
+        const imgList = await url.json();
+        console.log('[INFO]     Connexion reussite !');
+
+        const createElement = async () => {
+                        let randomImg = imgList.images[Math.round(Math.random()*(imgList.images.length-1))];
+                        let c = document.createElement('div');
+                        c.style.backgroundImage = `url('${randomImg.thumb_src}')`;
+                        c.style.backgroundRepeat = 'no-repeat';
+                        c.style.backgroundSize = "100% 100%";
+                        c.style.backgroundColor = "#000";
+                        c.style.width = "100%";
+                        c.style.height = "100%";
+                        return c;
+                    }
+
+
+
+        const simple = new Grid({
+            width: 200,
+            height: 120,
+            mouse: true,
+            body: document.querySelector('#simple'),
+            createElementFunction: createElement
+        });
+
+        const animate_without_mouse = new Grid({
+            width: 200,
+            height: 120,
+            mouse: false,
+            animation: {
+                velocityX: 1,
+                velocityY: 0,
+                time: 10
+            },
+            body: document.querySelector('#animate_without_mouse'),
+            createElementFunction: createElement
+        });
+
+        const animate_with_mouse = new Grid({
+            width: 200,
+            height: 120,
+            mouse: true,
+            animation: {
+                velocityX: 0.5,
+                velocityY: 0.5,
+                time: 10
+            },
+            body: document.querySelector('#animate_with_mouse'),
+            createElementFunction: createElement
+        });
+
+    })();
+</script>
+</html>
