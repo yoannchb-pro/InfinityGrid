@@ -1,5 +1,7 @@
 # InfinityGrid
 Create an infinity grid in html wich can display random elements
+## Concept from:
+https://codepen.io/radixzz/pen/eRJKXy
 ## See 3 example
 https://yoannchb-pro.github.io/InfinityGrid/.
 ## Basic image
@@ -9,7 +11,8 @@ https://yoannchb-pro.github.io/InfinityGrid/.
 const simple = new Grid({
   width: 200, //width of one block
   height: 120, //height of one block
-  mouse: true, /:disable or enable the mouse
+  mouse: true, //disable or enable the mouse (default = true)
+  zoom: true, //disable or enable the zoom (default = false)
   animation: { //set up an animation
     velocityX: 1, velocity y for each block
     velocityY: 0, //velocity x for each block

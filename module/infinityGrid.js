@@ -251,6 +251,7 @@ class Grid{
     }
 }
 
+
 class CardGrid{
     constructor(x, y, body){
         this.body = body;
@@ -284,3 +285,8 @@ class CardGrid{
         this.element.style.transform = `translate(${this.x}px, ${this.y}px)`;
     }
 }
+
+
+exports.Grid = (json) => {
+    return new Grid(json);
+};
