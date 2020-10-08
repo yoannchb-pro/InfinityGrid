@@ -3,7 +3,7 @@ Create an infinity grid in html wich can display random elements
 ## Concept from:
 https://codepen.io/radixzz/pen/eRJKXy
 ## See 3 example
-https://yoannchb-pro.github.io/InfinityGrid/.
+https://yoannchb-pro.github.io/InfinityGrid/index.html
 ## Basic image
 <img src='./img/basic.png' alt='Basic image'></img>
 ## How to use ?
